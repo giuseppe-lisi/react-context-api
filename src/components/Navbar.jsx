@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { BudgetContext } from "../contexts/BudgetContext";
 
 function Navbar() {
-    const { budgetMode, setBudgetMode } = useContext(BudgetContext);
+    const { maxPrice, setMaxPrice } = useContext(BudgetContext);
+
+    useEffect(() => {
+        console.log(maxPrice);
+    }, [maxPrice]);
 
     return (
         <div className="navbarDiv">
@@ -15,12 +19,12 @@ function Navbar() {
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/Products">Prodotti</NavLink>
                     <NavLink to="/AboutUs">Info</NavLink>
-                    <button
+                    <p className="navPriceTag">Inserisci Prezzo Massimo</p>
+                    <input
+                        type="number"
                         className="budgetButton"
-                        onClick={() => setBudgetMode(!budgetMode)}
-                    >
-                        Modalità Budget: {budgetMode ? "On" : "Off"}
-                    </button>
+                        onChange={(e) => setMaxPrice(e.target.value)}
+                    />
                 </nav>
             </div>
         </div>
