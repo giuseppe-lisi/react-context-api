@@ -1,16 +1,33 @@
-# React + Vite
+**📃 TRACCIA**
+Oggi estendiamo il nostro mini e-commerce introducendo le Context API di React.
+Useremo un contesto per gestire una modalità budget, che permette all’utente di visualizzare solo i prodotti più economici.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MILESTONE 1**
+Create un nuovo context chiamato BudgetContext
 
-Currently, two official plugins are available:
+Deve contenere uno stato budgetMode di tipo booleano (true/false)
+Deve fornire anche la funzione per modificarlo (setBudgetMode)
+Wrappiamo l’intera applicazione con il BudgetProvider
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**MILESTONE 2**
+Leggete/scrivete il context da Navbar:
 
-## React Compiler
+Create un componente Navbar.jsx (se non lo avete già)
+Inseritelo in App.jsx o nel vostro componente di Layout
+All’interno della Navbar aggiungete un bottone “Modalità Budget” che attiva/disattiva budgetMode con un click
+Il bottone deve cambiare etichetta in base allo stato (Attiva Modalità Budget / Disattiva Modalità Budget)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**MILESTONE 3**
+Modificate la pagina dei prodotti per filtrarli:
 
-## Expanding the ESLint configuration
+Recuperate il valore budgetMode usando il context
+Se budgetMode === true, mostrate solo i prodotti con price <= 30
+Altrimenti, mostrare tutti i prodotti normalmente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**🎁 BONUS**
+ Trasformare la modalità budget in un vero e proprio filtro:
+
+Trasformate il booleano budgetMode in un valore numerico maxPrice (es.30, 50ecc). Il valore di partenza deve essere null .
+Nel componente navbar al posto del bottone inserite un campo input di tipo number. Questo campo deve essere legato al valore maxPrice del context
+Nella pagina prodotti, verranno mostrati soltanto i prodotti con price <= maxPrice
+‼️Se max price è null o comunque non è settato, devono essere visualizzati tutti i prodotti
