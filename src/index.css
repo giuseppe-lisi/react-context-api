@@ -32,6 +32,7 @@ p {
 nav {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 a {
@@ -106,4 +107,9 @@ img {
 button {
     padding: 10px;
     font-size: 1.2rem;
+}
+
+.budgetButton {
+    font-size: 0.7rem;
+    padding: 5px;
 }
