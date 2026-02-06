@@ -1,0 +1,109 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 30px;
+}
+
+.navbarDiv {
+    background-color: burlywood;
+}
+
+h2 {
+    padding-block: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.active {
+    color: rgb(227, 98, 0);
+}
+
+.productContainer {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.productCard {
+    width: 210px;
+    height: 300px;
+    background-color: rgb(254, 246, 231);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.cardImg {
+    height: 70%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100%;
+}
+
+.homeBanner {
+    width: 100%;
+    height: 500px;
+    background-image: url("assets/images/Screenshot 2026-02-03 at 17.32.40.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.singleProduct {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.singleProductImg {
+    height: 300px;
+}
+
+.singleProductDesc {
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+.productButtons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1.2rem;
+}
