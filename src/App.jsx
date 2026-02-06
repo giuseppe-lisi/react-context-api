@@ -16,7 +16,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
     return (
         <>
-            <BudgetContext.Provider>
+            <BudgetContext.Provider value={{ count: 1 }}>
                 <BrowserRouter>
                     <Routes>
                         <Route Component={DefaultLayout}>
