@@ -5,7 +5,7 @@ import { BudgetContext } from "../contexts/BudgetContext";
 
 function Products() {
     const [products, setProducts] = useState([]);
-    const { budgetMode } = useContext(BudgetContext);
+    const { maxPrice } = useContext(BudgetContext);
 
     function getProductData() {
         const apiUrl = "https://fakestoreapi.com/products";
@@ -27,35 +27,21 @@ function Products() {
             <div className="wrapper">
                 <h2>PRODOTTI</h2>
                 <div className="productContainer">
-                    {budgetMode
-                        ? products
-                              .filter((product) => product.price <= 30)
-                              .map((product) => {
-                                  return (
-                                      <Link
-                                          to={`/Products/${product.id}`}
-                                          className="productCard"
-                                      >
-                                          <div className="cardImg">
-                                              <img src={product.image} />
-                                          </div>
-                                          <h4>{product.title}</h4>
-                                      </Link>
-                                  );
-                              })
-                        : products.map((product) => {
-                              return (
-                                  <Link
-                                      to={`/Products/${product.id}`}
-                                      className="productCard"
-                                  >
-                                      <div className="cardImg">
-                                          <img src={product.image} />
-                                      </div>
-                                      <h4>{product.title}</h4>
-                                  </Link>
-                              );
-                          })}
+                    {products
+                        .filter(product => maxPrice ? product.price <= maxPrice : product)
+                        .map(product => {
+                            return (
+                                <Link
+                                    to={`/Products/${product.id}`}
+                                    className="productCard"
+                                >
+                                    <div className="cardImg">
+                                        <img src={product.image} />
+                                    </div>
+                                    <h4>{product.title}</h4>
+                                </Link>
+                            );
+                        })}
                 </div>
             </div>
         </>
