@@ -1,9 +1,4 @@
-import { useContext } from "react";
-import BudgetContext from "../contexts/BudgetContext";
-
 function AboutUs() {
-    const { count } = useContext(BudgetContext);
-
     return (
         <>
             <div className="wrapper">
@@ -21,8 +16,6 @@ function AboutUs() {
                     selezionato di oggetti inutili. Se stai cercando
                     l’essenziale, sei nel posto sbagliato.
                 </p>
-
-                <div>dati da contesto: { count }</div>
             </div>
         </>
     );
