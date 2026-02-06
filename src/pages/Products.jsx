@@ -32,22 +32,6 @@ function Products() {
                               .filter((product) => product.price <= 30)
                               .map((product) => {
                                   return (
-                                      <>
-                                          <Link
-                                              to={`/Products/${product.id}`}
-                                              className="productCard"
-                                          >
-                                              <div className="cardImg">
-                                                  <img src={product.image} />
-                                              </div>
-                                              <h4>{product.title}</h4>
-                                          </Link>
-                                      </>
-                                  );
-                              })
-                        : products.map((product) => {
-                              return (
-                                  <>
                                       <Link
                                           to={`/Products/${product.id}`}
                                           className="productCard"
@@ -57,7 +41,19 @@ function Products() {
                                           </div>
                                           <h4>{product.title}</h4>
                                       </Link>
-                                  </>
+                                  );
+                              })
+                        : products.map((product) => {
+                              return (
+                                  <Link
+                                      to={`/Products/${product.id}`}
+                                      className="productCard"
+                                  >
+                                      <div className="cardImg">
+                                          <img src={product.image} />
+                                      </div>
+                                      <h4>{product.title}</h4>
+                                  </Link>
                               );
                           })}
                 </div>
