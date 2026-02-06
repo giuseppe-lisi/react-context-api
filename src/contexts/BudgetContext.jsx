@@ -2,4 +2,12 @@ import { createContext } from "react";
 
 const BudgetContext = createContext();
 
-export default BudgetContext;
+function BudgetProvider({ children }) {
+    return (
+        <BudgetContext.Provider value={{ count: 1 }}>
+            {children}
+        </BudgetContext.Provider>
+    );
+}
+
+export { BudgetContext, BudgetProvider}

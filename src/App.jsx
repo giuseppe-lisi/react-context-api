@@ -8,7 +8,7 @@ import SingleProduct from "./pages/SingleProduct.jsx";
 import DefaultLayout from "./layouts/DefaultLayout.jsx";
 
 // contexts
-import BudgetContext from "./contexts/BudgetContext.jsx";
+import { BudgetProvider } from "./contexts/BudgetContext.jsx";
 
 // react imports
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -16,7 +16,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
     return (
         <>
-            <BudgetContext.Provider value={{ count: 1 }}>
+            <BudgetProvider>
                 <BrowserRouter>
                     <Routes>
                         <Route Component={DefaultLayout}>
@@ -30,7 +30,7 @@ function App() {
                         </Route>
                     </Routes>
                 </BrowserRouter>
-            </BudgetContext.Provider>
+            </BudgetProvider>
         </>
     );
 }
