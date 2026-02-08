@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BudgetContext } from "../contexts/BudgetContext";
+import { useBudget } from "../contexts/BudgetContext";
 
 function Products() {
     const [products, setProducts] = useState([]);
-    const { maxPrice } = useContext(BudgetContext);
+    const { maxPrice } = useBudget();
 
     function getProductData() {
         const apiUrl = "https://fakestoreapi.com/products";
@@ -29,11 +29,12 @@ function Products() {
                 <div className="productContainer">
                     {products
                         .filter(product => maxPrice ? product.price <= maxPrice : product)
-                        .map(product => {
+                        .map((product, i) => {
                             return (
                                 <Link
                                     to={`/Products/${product.id}`}
                                     className="productCard"
+                                    key={i}
                                 >
                                     <div className="cardImg">
                                         <img src={product.image} />

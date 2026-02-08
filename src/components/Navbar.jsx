@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { BudgetContext } from "../contexts/BudgetContext";
+import { useEffect } from "react";
+import { useBudget } from "../contexts/BudgetContext";
 
 function Navbar() {
-    const { maxPrice, setMaxPrice } = useContext(BudgetContext);
+    const { maxPrice, setMaxPrice } = useBudget();
 
     useEffect(() => {
         console.log(maxPrice);
