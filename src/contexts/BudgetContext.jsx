@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const BudgetContext = createContext();
 
@@ -12,4 +12,9 @@ function BudgetProvider({ children }) {
     );
 }
 
-export { BudgetContext, BudgetProvider}
+function useBudget() {
+    const context = useContext(BudgetContext);
+    return context;
+}
+
+export { BudgetProvider, useBudget}
