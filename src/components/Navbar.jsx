@@ -5,10 +5,6 @@ import { useBudget } from "../contexts/BudgetContext";
 function Navbar() {
     const { maxPrice, setMaxPrice } = useBudget();
 
-    useEffect(() => {
-        console.log(maxPrice);
-    }, [maxPrice]);
-
     return (
         <div className="navbarDiv">
             <div className="wrapper navbar">
