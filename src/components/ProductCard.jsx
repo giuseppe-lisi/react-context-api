@@ -32,7 +32,16 @@ function ProductCard({ product }) {
                 <div className="starContainer">
                     {/* renderizza le stelle del rating del prodotto */}
                     {stars.map((star, i, stars) => (
-                        <div style={i === stars.length - 1 ? { width: `${ratingDecimals*10}%`, overflow: "hidden" } : {}}>
+                        <div
+                            style={
+                                i === stars.length - 1
+                                    ? {
+                                          width: `${ratingDecimals * 10}%`,
+                                          overflow: "hidden",
+                                      }
+                                    : {}
+                            }
+                        >
                             <img
                                 className="star"
                                 src="src/assets/images/star.png"
@@ -40,6 +49,7 @@ function ProductCard({ product }) {
                         </div>
                     ))}
                 </div>
+                <div>Rating: {rating}</div>
             </Link>
         </>
     );
