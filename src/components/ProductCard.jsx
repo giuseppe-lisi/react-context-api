@@ -28,7 +28,7 @@ function ProductCard({ product }) {
                 <div className="cardImg">
                     <img src={product.image} />
                 </div>
-                <h4>{product.title}</h4>
+                <h4>{(product.title).split(' ').slice(0,5).join(' ')}...</h4>
                 <div className="starContainer">
                     {/* renderizza le stelle del rating del prodotto */}
                     {stars.map((star, i, stars) => (
