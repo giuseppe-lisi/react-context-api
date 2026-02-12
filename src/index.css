@@ -121,3 +121,7 @@ button {
 .star {
     width: 22px;
 }
+
+.starContainer {
+    display: flex;
+}
