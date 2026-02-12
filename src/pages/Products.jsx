@@ -33,7 +33,7 @@ function Products() {
                             maxPrice ? product.price <= maxPrice : product,
                         )
                         .map((product) => (
-                            <ProductCard product={product}></ProductCard>
+                            <ProductCard product={product} key={product.id}></ProductCard>
                         ))}
                 </div>
             </div>
