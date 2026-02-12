@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useBudget } from "../contexts/BudgetContext";
+import ProductCard from "../components/ProductCard";
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -28,21 +29,12 @@ function Products() {
                 <h2>PRODOTTI</h2>
                 <div className="productContainer">
                     {products
-                        .filter(product => maxPrice ? product.price <= maxPrice : product)
-                        .map((product, i) => {
-                            return (
-                                <Link
-                                    to={`/Products/${product.id}`}
-                                    className="productCard"
-                                    key={i}
-                                >
-                                    <div className="cardImg">
-                                        <img src={product.image} />
-                                    </div>
-                                    <h4>{product.title}</h4>
-                                </Link>
-                            );
-                        })}
+                        .filter((product) =>
+                            maxPrice ? product.price <= maxPrice : product,
+                        )
+                        .map((product) => (
+                            <ProductCard product={product}></ProductCard>
+                        ))}
                 </div>
             </div>
         </>
