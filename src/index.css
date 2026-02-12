@@ -117,3 +117,7 @@ button {
 .navPriceTag {
     font-size: 0.8rem;
 }
+
+.star {
+    width: 22px;
+}
